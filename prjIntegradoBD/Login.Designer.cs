@@ -65,9 +65,9 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(221, 73);
+            this.txtUser.Location = new System.Drawing.Point(221, 71);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(245, 22);
+            this.txtUser.Size = new System.Drawing.Size(250, 22);
             this.txtUser.TabIndex = 3;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
@@ -83,14 +83,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 450);
+            this.ClientSize = new System.Drawing.Size(674, 450);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

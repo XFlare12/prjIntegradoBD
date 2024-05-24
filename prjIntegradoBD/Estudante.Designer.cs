@@ -37,7 +37,11 @@
             // 
             // dgvNotas
             // 
+            this.dgvNotas.AllowUserToAddRows = false;
+            this.dgvNotas.AllowUserToDeleteRows = false;
+            this.dgvNotas.AllowUserToOrderColumns = true;
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNotas.Enabled = false;
             this.dgvNotas.Location = new System.Drawing.Point(12, 64);
             this.dgvNotas.Name = "dgvNotas";
             this.dgvNotas.RowHeadersWidth = 51;
