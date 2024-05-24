@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace prjIntegradoBD
@@ -9,6 +10,8 @@ namespace prjIntegradoBD
         public Login()
         {
             InitializeComponent();
+
+            
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -73,6 +76,10 @@ namespace prjIntegradoBD
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void Estudante_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit(); // Isso garantirá que a aplicação inteira encerre quando o formulário Estudante for fechado
         }
     }
 }
