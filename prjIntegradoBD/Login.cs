@@ -6,18 +6,22 @@ namespace prjIntegradoBD
 {
     public partial class Login : Form
     {
-        public Login()
+        private string userType;
+
+        public Login(string userType)
         {
             InitializeComponent();
+            this.userType = userType;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             AutenticarUsuario();
         }
+
         private int ObterUsuarioId(string nomeUsuario)
         {
-            int usuarioId = -1; 
+            int usuarioId = -1;
 
             string connectionString = "Server=tcp:prj-uninove.database.windows.net,1433;Initial Catalog=projeto_uninove;Persist Security Info=False;User ID=OM3nezes;Password=RogerioFabi0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string query = "SELECT ID FROM TB_USUARIO WHERE NM_USUARIO = @nomeUsuario";
@@ -32,7 +36,7 @@ namespace prjIntegradoBD
 
                 if (result != null)
                 {
-                    usuarioId = Convert.ToInt32(result); 
+                    usuarioId = Convert.ToInt32(result);
                 }
             }
 
@@ -61,18 +65,25 @@ namespace prjIntegradoBD
                     string tipoUsuario = reader["TP_USUARIO"].ToString();
                     string nomeUsuario = reader["NM_USUARIO"].ToString();
 
-                    if (tipoUsuario == "PROFESSOR")
+                    if (tipoUsuario == userType) // Verifica se o tipo de usuário corresponde ao esperado
                     {
-                        Professor professorForm = new Professor(nomeUsuario);
-                        professorForm.Show();
+                        if (tipoUsuario == "PROFESSOR")
+                        {
+                            Professor professorForm = new Professor(nomeUsuario);
+                            professorForm.Show();
+                        }
+                        else if (tipoUsuario == "ALUNO")
+                        {
+                            int usuarioId = ObterUsuarioId(usuario);
+                            Estudante estudanteForm = new Estudante(usuarioId);
+                            estudanteForm.Show();
+                        }
+                        this.Hide();
                     }
-                    else if (tipoUsuario == "ALUNO")
+                    else
                     {
-                        int usuarioId = ObterUsuarioId(usuario);
-                        Estudante estudanteForm = new Estudante(usuarioId);
-                        estudanteForm.Show();
+                        MessageBox.Show($"Acesso negado para {userType.ToLower()}. Por favor, entre com as credenciais corretas.");
                     }
-                    this.Hide();
                 }
                 else
                 {
@@ -86,7 +97,6 @@ namespace prjIntegradoBD
             // Qualquer código necessário ao carregar o formulário de login
         }
 
-
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
 
@@ -97,5 +107,13 @@ namespace prjIntegradoBD
 
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            // Mostrar o formulário Login
+            Home loginForm = new Home();
+            loginForm.Show();
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace prjIntegradoBD
         {
             string connectionString = "Server=tcp:prj-uninove.database.windows.net,1433;Initial Catalog=projeto_uninove;Persist Security Info=False;User ID=OM3nezes;Password=RogerioFabi0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string query = @"
-                SELECT DISCIPLINA, NOTA_B1, NOTA_B2, NOTA_B3, NOTA_B4, ANO_LETIVO 
+                SELECT DISCIPLINA, NOTA_B1, NOTA_B2, NOTA_B3, NOTA_B4, STATUS 
                 FROM TB_NOTAS 
                 WHERE TB_ALUNOID = @alunoID";
 
@@ -64,13 +64,12 @@ namespace prjIntegradoBD
         {
             this.Close();
 
-            // Mostrar o formulário Login
-            Login loginForm = new Login();
+            Home loginForm = new Home();
             loginForm.Show();
         }
         private void Estudante_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit(); // Isso garantirá que a aplicação inteira encerre quando o formulário Estudante for fechado
+            Application.Exit(); 
         }
     }
 }

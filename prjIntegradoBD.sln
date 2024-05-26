@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prjIntegradoBD", "prjIntegradoBD\prjIntegradoBD.csproj", "{5FD718FE-5C1F-4DED-8572-E0190502FB15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{FCABB797-D754-4556-BD77-4DCB28CE7C6B}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\Icone-aluno.jpg = ..\..\..\..\Desktop\Icone-aluno.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
