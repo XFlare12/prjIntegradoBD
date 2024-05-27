@@ -40,6 +40,7 @@
             this.dgvNotas.AllowUserToAddRows = false;
             this.dgvNotas.AllowUserToDeleteRows = false;
             this.dgvNotas.AllowUserToOrderColumns = true;
+            this.dgvNotas.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotas.Enabled = false;
             this.dgvNotas.Location = new System.Drawing.Point(12, 64);
@@ -61,28 +62,33 @@
             // 
             // btnExportar
             // 
+            this.btnExportar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnExportar.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Location = new System.Drawing.Point(721, 418);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(161, 27);
             this.btnExportar.TabIndex = 2;
             this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnVoltar
             // 
+            this.btnVoltar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnVoltar.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(521, 418);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(179, 26);
             this.btnVoltar.TabIndex = 3;
             this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // Estudante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(895, 450);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnExportar);

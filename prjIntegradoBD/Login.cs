@@ -115,5 +115,14 @@ namespace prjIntegradoBD
             Home loginForm = new Home();
             loginForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            // Mostrar o formulário Login
+            Adicionar AdicionarForm = new Adicionar();
+            AdicionarForm.Show();
+        }
     }
 }

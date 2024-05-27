@@ -46,16 +46,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblAluno = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(362, 495);
+            this.btnVoltar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnVoltar.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(362, 484);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(166, 37);
+            this.btnVoltar.Size = new System.Drawing.Size(166, 48);
             this.btnVoltar.TabIndex = 0;
             this.btnVoltar.Text = "VOLTAR";
-            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblDesc
@@ -70,17 +73,19 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.Location = new System.Drawing.Point(593, 495);
+            this.btnGravar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnGravar.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGravar.Location = new System.Drawing.Point(593, 484);
             this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(166, 37);
+            this.btnGravar.Size = new System.Drawing.Size(166, 48);
             this.btnGravar.TabIndex = 2;
             this.btnGravar.Text = "GRAVAR NOTAS";
-            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(53, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 46);
@@ -106,7 +111,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(53, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 46);
@@ -123,7 +128,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(54, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 46);
@@ -140,7 +145,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(53, 268);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 46);
@@ -157,7 +162,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(53, 314);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 46);
@@ -174,7 +179,7 @@
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(53, 381);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(208, 46);
@@ -200,12 +205,28 @@
             this.lblAluno.Size = new System.Drawing.Size(322, 68);
             this.lblAluno.TabIndex = 18;
             this.lblAluno.Text = "Lançando notas para o aluno:";
+            this.lblAluno.Click += new System.EventHandler(this.lblAluno_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Location = new System.Drawing.Point(55, 484);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(207, 48);
+            this.btnExcluir.TabIndex = 19;
+            this.btnExcluir.Text = "Apagar dados do aluno";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // Professor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 556);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.lblAluno);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtAlunoID);
@@ -250,5 +271,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblAluno;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

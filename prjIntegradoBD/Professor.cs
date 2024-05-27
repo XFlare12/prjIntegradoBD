@@ -151,7 +151,7 @@ namespace prjIntegradoBD
 
             int alunoId = int.Parse(txtAlunoID.Text);
 
-            string queryAluno = "SELECT NM_USUARIO FROM TB_ALUNO WHERE ID = @alunoId";
+            string queryAluno = "SELECT NM_USUARIO, TP_USUARIO FROM TB_USUARIO WHERE ID = @alunoId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -159,15 +159,76 @@ namespace prjIntegradoBD
                 command.Parameters.AddWithValue("@alunoId", alunoId);
 
                 connection.Open();
-                string nomeAluno = command.ExecuteScalar() as string;
-
-                if (!string.IsNullOrEmpty(nomeAluno))
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    lblAluno.Text = nomeAluno;
+                    if (reader.Read())
+                    {
+                        string nomeAluno = reader["NM_USUARIO"].ToString();
+                        string tipoUsuario = reader["TP_USUARIO"].ToString();
+
+                        if (tipoUsuario == "ALUNO")
+                        {
+                            lblAluno.Text = $"Lançando notas para o aluno: {nomeAluno}";
+                        }
+                        else
+                        {
+                            MessageBox.Show($"O usuário de ID {alunoId} não é um aluno.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aluno não encontrado.");
+                    }
+                }
+            }
+        }
+
+        private void lblAluno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirAluno();
+        }
+
+        private void ExcluirAluno()
+        {
+            string connectionString = "Server=tcp:prj-uninove.database.windows.net,1433;Initial Catalog=projeto_uninove;Persist Security Info=False;User ID=OM3nezes;Password=RogerioFabi0;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+            int alunoId = int.Parse(txtAlunoID.Text);
+
+            string queryVerificar = "SELECT TP_USUARIO FROM TB_USUARIO WHERE ID = @alunoId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand commandVerificar = new SqlCommand(queryVerificar, connection);
+                commandVerificar.Parameters.AddWithValue("@alunoId", alunoId);
+
+                connection.Open();
+                string tipoUsuario = commandVerificar.ExecuteScalar() as string;
+
+                if (tipoUsuario == "ALUNO")
+                {
+                    string queryExcluir = "DELETE FROM TB_USUARIO WHERE ID = @alunoId";
+
+                    SqlCommand commandExcluir = new SqlCommand(queryExcluir, connection);
+                    commandExcluir.Parameters.AddWithValue("@alunoId", alunoId);
+
+                    try
+                    {
+                        commandExcluir.ExecuteNonQuery();
+                        MessageBox.Show("Aluno excluído com sucesso!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao excluir aluno: " + ex.Message);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não encontrado.");
+                    MessageBox.Show("Erro ao tentar excluir professor.");
                 }
             }
         }
