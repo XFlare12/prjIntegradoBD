@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblTempo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAluno
@@ -91,12 +92,24 @@
             this.label3.Text = "Professor";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblTempo
+            // 
+            this.lblTempo.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTempo.Location = new System.Drawing.Point(508, 381);
+            this.lblTempo.Name = "lblTempo";
+            this.lblTempo.Size = new System.Drawing.Size(243, 68);
+            this.lblTempo.TabIndex = 6;
+            this.lblTempo.Text = "38 ";
+            this.lblTempo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTempo.Click += new System.EventHandler(this.lblTempo_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(768, 450);
+            this.Controls.Add(this.lblTempo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTempo;
     }
 }
